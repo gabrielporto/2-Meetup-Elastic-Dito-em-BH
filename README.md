@@ -22,3 +22,6 @@ Gabriel Porto Lopes - Tech Lead/Software Engineer @ Lojas REDE
 Convidem os amigos e vamos começar bem o ano! Quaisquer dúvidas, é só perguntar aqui nos comentários do evento.
 
 APOIO: Dito
+
+
+https://www.elastic.co/guide/en/apm/guide/7.17/quick-start-overview.html
