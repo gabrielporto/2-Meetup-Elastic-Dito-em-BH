@@ -9,7 +9,7 @@ namespace ApiB
 
             builder.Configuration["ElasticApm:ServiceName"] = builder.Environment.ApplicationName;
             builder.Configuration["ElasticApm:Environment"] = builder.Environment.EnvironmentName;
-            builder.Configuration["ElasticApm:ServerUrls"] = "http://localhost:8200";
+            builder.Configuration["ElasticApm:ServerUrls"] = "http://apm-server:8200";
             builder.Services.AddAllElasticApm();
 
             // Add services to the container.
@@ -28,7 +28,7 @@ namespace ApiB
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseAuthorization();
 

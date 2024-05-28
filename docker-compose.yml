@@ -65,6 +65,42 @@ services:
       interval: 10s
       retries: 20
       test: curl --write-out 'HTTP %{http_code}' --fail --silent --output /dev/null http://localhost:5601/api/status
+  api-a:
+    build:
+      dockerfile: ./ApiA/Dockerfile
+    ports:
+      - "5001:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+    - elastic
+  api-b:
+    build:
+      dockerfile: ./ApiB/Dockerfile
+    ports:
+      - "5002:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+    - elastic
+  api-c:
+    build:
+      dockerfile: ./ApiC/Dockerfile
+    ports:
+      - "5003:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+    - elastic
+  meetup-elastic:
+    build:
+      dockerfile: ./MeetupElastic/Dockerfile
+    ports:
+      - "5005:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+    - elastic
 
 volumes:
   esdata:
